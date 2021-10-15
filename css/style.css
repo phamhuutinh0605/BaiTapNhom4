@@ -6,36 +6,120 @@
 body,html{
     font-family:'Jost',sans-serif ;
 }
-/* ---------------THEME DARK--------------------- */
- /* Light theme */
+/*----------------- SWITCH MODE ----------------------- */
+/* LIGHT THEME */
 #myBody{
-    background-color:rgba(0, 0, 0, 1);
+    background-color:white;
   }
   #switchButton {
-    background-color:white;
-    color: black;
+    background-color: white;
   }
   #switchButton .fa-sun {
     display: none;
+
   }
   #switchButton .fa-moon {
     display: block;
+    color: black;
+    background-color: none;
   }
   
-  /* Dark Theme */
+/* DARK THEME */
   .dark#myBody{
-    background-color:#fff;
+    background-color:#151515;
   }
   .dark #switchButton {
-    background-color: black;
+    background-color: #151515;
   }
   .dark #switchButton .fa-sun {
     display: block;
-    color: #fff;
+    color: #ddd;
   }
   
   .dark #switchButton .fa-moon {
     display: none;
+  }
+/* DARK MODE HEADER */
+  .dark .header__poochCare {
+    background-color: #151515;
+  }
+  .dark #poochNavbar .nav-item a{
+      color: #ddd;
+  }
+  .dark #poochNavbar .dropdown-menu{
+      background-color: black;
+  }
+  
+  .dark #poochNavbar .nav-item:hover .dropdown-item:hover{
+      background-color: black;
+  }
+  
+  .dark #poochNavbar .nav-link:hover{
+      color: #189a46;
+  }
+  .dark .header__poochCare .container{
+    background-color: #151515;
+  }
+  .dark #poochNavbar .nav-link.active{
+      color: #189a46;
+  }
+/* DARK MODE ABOUT */
+  .dark .about__title h3{
+      color: #ddd;
+  }
+  .dark .about__title p{
+      color: #afafaf;
+  }
+  .dark .read{
+      color: #ddd;
+  }
+/* DARK MODE FEATURES */
+  .dark #feature{
+      background-color: #222;
+  }
+  .dark .features__box{
+      background-color: #151515;
+  }
+  .dark .features__box:hover{
+      background-color: #222;
+  }
+  .dark .features__box h4 a{
+      color: #ddd;
+  }
+  .dark .features__box h4 a:hover{
+      color: #189a46;
+  }
+  .dark .features__box p{
+      color: #afafaf;
+  }
+  .dark .features__box span{
+      color: #ddd;
+  }
+  .dark .features__box span:hover{
+      color: #189a46;
+  }
+/* DARK MODE REASON */
+  .dark .reason__item__content{
+    color: #ddd;
+  }
+  .dark .reason .reason__list .reason__item .reason__item__content > ul > li {
+    color: #ddd;
+  }
+/* DARK MODE PLAN */
+  .dark .title{
+    color: #ddd;
+  }
+/* DARK MODE BETTER */
+  .dark .better__content{
+    color: #ddd;
+  }
+/* DARK MODE TESTIMONAL */
+   .dark .testimonial__title{
+    color: #ddd;
+  }
+/* DARK MODE UPDATE */
+  .dark .update__title{
+      color: #ddd;
   }
 /* HEADER */
 header {
@@ -45,8 +129,6 @@ header {
     width: 100%;
     top: 50px;
     padding: 20px 15px;
-    -webkit-box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.2);
-            box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.2);
   }
 .navbar-brand span{
     font-size: 34px;
@@ -112,7 +194,39 @@ header {
 #poochNavbar .nav-item{
     padding: 0 10px;
 }
+.header__poochCare .navbar-toggler-icon{
+    line-height: 10px;
+    width: 8px;
+    height: 10px;
+    position: relative;
+}
+.header__poochCare .fa-bars::before{
+    position: absolute;
+    left: -4px;
+    color: #fff;
+} 
+.header__poochCare .navbar-toggler{
+    position: absolute;
+    right: 20px;
+}
 
+.header__poochCare .navbar-toggler{
+    background-color: green;
+}
+@media only screen and (max-width: 992px){
+    .navbar-toggler-icon{
+        display: block;
+        line-height: 11px;
+        font-size: 18px;
+        background-color: #189A46;
+        color: #fff;
+        border-radius: 8px;
+        border: none;
+    }
+    .header__poochCare .navbar-toggler .icon-close{
+        display: none;
+    }
+}
 /* CAROUSEL  */
 #carouselPooch .carousel-inner::before{
     content: "";
@@ -169,22 +283,6 @@ header {
     color: #189a46;
     transition: 0.3s;
 }
-#carouselPooch .border-btn{
-    border: 2px solid #fff;
-    color: #fff;
-    background-color: rgba(128, 128, 128, 0.1);
-    padding: 12px 35px;
-    font-size: 18px;
-    line-height: 28px; 
-    font-weight: 400;
-    transition: 0.3s;
-    border-radius: 10px;
-}
-#carouselPooch .border-btn:hover{
-    color: #189a46;
-    background-color: #fff;
-}
-
 
 /* ABOUT  */
 .about__bg{
@@ -303,7 +401,7 @@ header {
 .reason .reason__list .reason__item .reason__item__content {
     text-align: left;
 }
-  
+
 .reason .reason__list .reason__item .reason__item__content > h3 {
     font-size: 18px;
     font-weight: 400;
@@ -326,13 +424,15 @@ header {
     margin: 20px 0 30px 0;
 }
   
-  .reason .reason__list .reason__item .reason__item__content > ul > li {
+  .reason .reason__list .reason__item__content > ul > li {
     font-size: 16px;
     font-weight: 600;
     color: #000c04;
     margin-bottom: 1.5rem;
 }
-  
+
+
+
   @media screen and (max-width: 600px) {
     .reason .reason__list .reason__item .reason__item__content > ul > li {
       margin-bottom: 1rem;
